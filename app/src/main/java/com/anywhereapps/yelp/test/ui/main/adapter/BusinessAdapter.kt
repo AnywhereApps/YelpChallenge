@@ -10,14 +10,15 @@ import com.anywhereapps.yelp.test.ui.main.adapter.BusinessAdapter.BusinessViewHo
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class BusinessAdapter(private val businesses: ArrayList<Business>) : RecyclerView.Adapter<BusinessViewHolder>() {
+class BusinessAdapter(private val businesses: ArrayList<Business>, private val listener: (Business) -> Unit) : RecyclerView.Adapter<BusinessViewHolder>() {
+
 
     class BusinessViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(business: Business) {
             itemView.apply {
                 businessName.text = business.name
-                locationText.text = business.location.address1 + ", " + business.location.city
+                locationText.text = business.location?.address1 + ", " + business.location?.city
                 Glide.with(imageViewAvatar.context)
                     .load(business.image_url)
                     .into(imageViewAvatar)
@@ -31,7 +32,9 @@ class BusinessAdapter(private val businesses: ArrayList<Business>) : RecyclerVie
     override fun getItemCount(): Int = businesses.size
 
     override fun onBindViewHolder(holder: BusinessViewHolder, position: Int) {
-        holder.bind(businesses[position])
+        val item = businesses[position]
+        holder.bind(item)
+        holder.itemView.setOnClickListener { listener(item) }
     }
 
     fun addData(businesses: List<Business>) {

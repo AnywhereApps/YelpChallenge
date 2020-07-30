@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 
 class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
 
-    fun getEstablishments(token: String, term : String, latitude : String, longitude : String, radius : String) = liveData(Dispatchers.IO) {
+    fun getEstablishments(token: String, term : String, latitude : Double, longitude : Double, radius : String) = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
         try {
             emit(Resource.success(data = mainRepository.getEstablishment(token, term, latitude, longitude, radius)))

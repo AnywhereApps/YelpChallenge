@@ -3,4 +3,8 @@
     <color name="colorPrimary">#c42530</color>
     <color name="colorPrimaryDark">#c60b1b</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="fade_start_color">#00000000</color>
+    <color name="fade_center_color">#4f000000</color>
+    <color name="fade_end_color">#ff000000</color>
 </resources>

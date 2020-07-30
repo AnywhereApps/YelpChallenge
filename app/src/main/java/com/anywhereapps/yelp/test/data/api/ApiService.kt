@@ -10,7 +10,7 @@ interface ApiService {
     @GET("/v3/businesses/search")
     suspend fun getEstablishments(
         @Header("Authorization") token: String, @Query("term") term: String
-        , @Query("latitude") latitude: String, @Query("longitude") longitude: String,
+        , @Query("latitude") latitude: Double, @Query("longitude") longitude: Double,
         @Query("radius") radius: String
     ): Establishment
 

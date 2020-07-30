@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Vorto Yelp</string>
+
+    <string name="distance">Distance in miles: </string>
+    <string name="hint">Search food, restaurant etc.</string>
+    <string name="empty_data_msg">No result found </string>
+    <string name="current_location">Your location</string>
+    <string name="review_count">Reviews: %s</string>
+    <string name="rating">Rating: %s</string>
+    <string name="distance_km">Distance: %s meters</string>
+    <string name="error_msg">No result found. Please make sure you enabled the location permission.</string>
+    <string name="location_access_required">Location permission is required to find nearby best results.</string>
+    <string name="ok">OK</string>
+    <string name="location_permission_not_available">Permission is not available. Requesting location permission.</string>
+    <string name="location_permission_available">Location permission is available. Searching your location ...</string>
+    <string name="location_permission_granted">Location permission was granted. Searching your location.</string>
+    <string name="location_permission_denied">Location permission request was denied.</string>
+
+    <string name="maps_api_key">AIzaSyCiDfD068UdrzIRL2YYbdbgbTob-vfk1is</string>
+
+    <string-array name="miles">
+        <item>25</item>
+        <item>20</item>
+        <item>15</item>
+        <item>10</item>
+        <item>5</item>
+    </string-array>
+
 </resources>
